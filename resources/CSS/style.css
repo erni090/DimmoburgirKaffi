@@ -1,0 +1,256 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'poppins', sans-serif;
+    display: flex;
+    flex-direction: column;
+    background-color: #f4f4f4;
+}
+
+/* Header & Navigation */
+nav {
+    display: flex;
+    background-color: #f4f4f4;
+    padding: 0.5rem 1rem;
+    justify-content: space-between;
+    align-items: center;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+}
+
+nav .logo {
+    height: 50px;
+}
+#menu-list {
+    list-style: none;
+    display: flex; /* Mostra il menu di default su desktop */
+    gap: 1rem; /* Distanza tra gli elementi */
+    padding: 0;
+    margin: 0;
+}
+
+/* Seleziona direttamente gli <li> */
+#menu-list li {
+    margin-right: 1rem;
+}
+
+/* Stile per i link */
+#menu-list li a {
+    color: rgb(89, 59, 22);
+    text-decoration: none;
+    font-size: 1rem;
+    transition: color 0.3s;
+}
+
+/* Hover Effect */
+#menu-list li a:hover {
+    color: rgb(127, 251, 255);
+}
+/* Mobile Menu */
+.menu-icon {
+    display: none;
+    cursor: pointer;
+}
+.menu-icon :hover {
+    color: rgb(127, 251, 255);
+}
+/* Main Content */
+.container {
+    display: flex;
+    flex-direction: column;
+    position: relative;
+}
+
+.container img {
+    max-width: 100%;
+    height: 100%;
+    border-radius: 2px;
+}
+
+.overlay-text {
+    width: 100%;
+    position: absolute;
+    color: #ffffff;
+    margin: 0 auto;
+    text-transform: uppercase;
+}
+
+.overlay-text h1 {
+    font-family: 'poppins', sans-serif;
+    font-size: 10rem;
+    line-height: 1;
+}
+/* Responsive Typography for h1 */
+@media (max-width: 1200px) {
+    .overlay-text h1 {
+        font-size: 8rem;
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .overlay-text h1 {
+        font-size: 6rem;
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .overlay-text h1 {
+        font-size: 5rem;
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .overlay-text h1 {
+        font-size: 4rem;
+        display: none;
+    }
+}
+
+.overlay-text h3 {
+    font-family: 'poppins', sans-serif;
+    font-size: 3rem;
+    margin-top: 0;
+    margin-left: 31%;
+    color: rgb(255, 255, 255);
+    line-height: 1;
+}
+/* Responsive Typography for h3 */
+@media (max-width: 1200px) {
+    .overlay-text h3 {
+        font-size: 3rem;
+        display: none;
+    }
+}
+
+@media (max-width: 992px) {
+    .overlay-text h3 {
+        font-size: 2.5rem;
+        display: none;
+    }
+}
+
+@media (max-width: 768px) {
+    .overlay-text h3 {
+        font-size: 2.5rem;
+        display: none;
+    }
+}
+
+@media (max-width: 576px) {
+    .overlay-text h3 {
+        font-size: 2.5rem;
+        display: none;
+    }
+}
+
+#footer-container {
+    display: grid; /* Utilizza CSS Grid */
+    grid-template-columns: .3fr 1fr .5fr;
+    gap: 20px; /* Distanza tra le colonne */
+    padding: 20px;
+    background-color: #f4f4f4;
+    color: rgb(89, 59, 22);
+    border-top: #333 1px solid;
+
+}
+
+#contact, #about-us, iframe {
+    display: flex; /* Per centrare il contenuto dentro ogni sezione */
+    flex-direction: column; /* Allinea gli elementi in colonna */
+    text-align: left; /* Allinea il testo a sinistra per la sezione "About Us" */
+    align-items: flex-start; /* Allinea il testo a sinistra per la sezione "Contact" */
+}
+
+
+
+#about-us h2, #contact h2 {
+    margin-bottom: 10px; /* Distanza inferiore per separare il titolo dal testo */
+}
+
+iframe {
+    margin-top: 10px;
+    width: 100%; /* Occupa tutto lo spazio disponibile nella sua colonna */
+    height: 200px;
+    border: rgb(89, 59, 22) 1px solid;
+    border-radius: 10px;
+}
+
+#contact a {
+    color: rgb(191, 152, 104);
+    text-decoration: none;
+    line-height: 1.5;
+}
+
+#contact a:hover {
+    color: rgb(127, 251, 255);
+}
+
+#copy {
+    grid-column: 1 / -1; /* Occupare tutta la larghezza del grid */
+    text-align: end;
+    margin-top: 20px;
+    font-size: 14px;
+    opacity: 0.7;
+}
+
+/* Mobile-First Adjustments */
+
+/* Ensure that mobile menu is displayed properly */
+@media (max-width: 768px) {
+    .menu-icon {
+        display: block; /* Show the menu icon on smaller screens */
+    }
+
+    #menu-list {
+        display: none; /* Hide the default menu */
+        flex-direction: row;
+    }
+
+    #menu-list li {
+        margin: 1rem 0; /* Space out menu items vertically */
+    }
+
+    #menu-list.active {
+        display: flex; /* Show menu when toggled */
+    }
+
+    /* Ensure image and content is responsive */
+    .container img {
+        height: auto;
+        width: 100%;
+    }
+
+    /* Footer adjustments */
+    #footer-container {
+        grid-template-columns: 1fr; /* Stack footer items vertically */
+    }
+}
+
+/* Extra Small Devices */
+@media (max-width: 576px) {
+    .overlay-text h3 {
+        font-size: 2rem;
+        margin-left: 0; /* Center text on small screens */
+    }
+
+    /* Footer items should be stacked */
+    #footer-container {
+        grid-template-columns: 1fr; /* Stack footer items vertically */
+        padding: 10px;
+    }
+
+    #contact a, #about-us h2 {
+        font-size: 1rem; /* Reduce font size for smaller screens */
+    }
+}
